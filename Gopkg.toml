@@ -25,6 +25,10 @@
 #   unused-packages = true
 
 [[constraint]]
+  name = "github.com/cosmos/cosmos-sdk"
+  source = "https://github.com/kingblockio/cosmos-sdk.git"
+
+[[constraint]]
   name = "github.com/bgentry/speakeasy"
   version = "~0.1.0"
 

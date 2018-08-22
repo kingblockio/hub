@@ -50,15 +50,12 @@ else
 	go build $(BUILD_FLAGS) -o build/democli ./examples/democoin/cmd/democli
 endif
 
-install: check-ledger
-	go install $(BUILD_FLAGS) ./cmd/gaia/cmd/gaiad
-	go install $(BUILD_FLAGS) ./cmd/gaia/cmd/gaiacli
+install_hub: check-ledger
+	go install $(BUILD_FLAGS) ./cmd/gaiad
+	go install $(BUILD_FLAGS) ./cmd/gaiacli
 
-install_examples:
-	go install $(BUILD_FLAGS) ./examples/basecoin/cmd/basecoind
-	go install $(BUILD_FLAGS) ./examples/basecoin/cmd/basecli
-	go install $(BUILD_FLAGS) ./examples/democoin/cmd/democoind
-	go install $(BUILD_FLAGS) ./examples/democoin/cmd/democli
+install_relay:
+	go install $(BUILD_FLAGS) ./cmd/relay
 
 install_debug:
 	go install $(BUILD_FLAGS) ./cmd/gaia/cmd/gaiadebug
